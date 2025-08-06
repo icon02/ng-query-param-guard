@@ -1,0 +1,58 @@
+<table>
+  <thead>
+  <tr>
+    <th class="name-col">Name</th>
+    <th class="country-col">Country</th>
+    <th class="city-col">City</th>
+    <th>Begin</th>
+    <th>End</th>
+  </tr>
+  <tr>
+    <td>
+    </td>
+    <td></td>
+    <td>
+      <select
+        aria-label="Filter by city"
+        [ngModel]="$filter().city"
+        (ngModelChange)="onCityFilterEntered($event)">
+        <option [ngValue]="null">No Filter</option>
+        @for (city of $cityOptions(); track city) {
+          <option [ngValue]="city">{{ city }}</option>
+        }
+      </select>
+    </td>
+    <td>
+      <input
+        type="datetime-local"
+        aria-label="Filter by begin"
+        [value]="$filter().begin"
+        [ngModel]="$filter().begin"
+        (ngModelChange)="onBeginFilterEntered($event)">
+    </td>
+    <td>
+      <input
+        type="datetime-local"
+        aria-label="Filter by end"
+        [ngModel]="$filter().end"
+        (ngModelChange)="onEndFilterEntered($event)">
+    </td>
+  </tr>
+  </thead>
+
+  <tbody>
+    @for (concert of $concerts(); track concert.name) {
+      <tr>
+        <td>{{ concert.name }}</td>
+        <td>{{ concert.country }}</td>
+        <td>{{ concert.city }}</td>
+        <td>{{ concert.begin | date : "dd.MM.yyyy HH:mm" }}</td>
+        <td>{{ concert.end | date : "dd.MM.yyyy HH:mm" }}</td>
+      </tr>
+    } @empty {
+      <tr>
+        <td colspan="5">No concerts found</td>
+      </tr>
+    }
+  </tbody>
+</table>

@@ -1,0 +1,19 @@
+header {
+  padding: 16px;
+  border-bottom: 1px solid lightgray;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header > a.home-link > h1 {
+  font-size: 3rem;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  padding: 16px;
+}

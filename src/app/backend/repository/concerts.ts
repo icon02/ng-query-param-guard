@@ -1,0 +1,73 @@
+import { Country } from '../../model/country';
+import { City } from '../../model/city';
+import { Concert } from '../../model/concert';
+
+export const concerts: Concert[] = [
+  { name: "Vienna Jazz Fest", country: Country.AUSTRIA, city: City.VIENNA, begin: new Date("2024-03-16T19:00:00"), end: new Date("2024-03-16T22:00:00") },
+  { name: "Linz Rock Night", country: Country.AUSTRIA, city: City.LINZ, begin: new Date("2024-04-22T20:30:00"), end: new Date("2024-04-22T23:30:00") },
+  { name: "Graz Electronic Dreams", country: Country.AUSTRIA, city: City.GRAZ, begin: new Date("2024-05-19T21:00:00"), end: new Date("2024-05-19T23:00:00") },
+  { name: "Innsbruck Indie Session", country: Country.AUSTRIA, city: City.INNSBRUCK, begin: new Date("2024-06-05T18:30:00"), end: new Date("2024-06-05T21:45:00") },
+  { name: "Vienna Summer Vibes", country: Country.AUSTRIA, city: City.VIENNA, begin: new Date("2024-07-14T20:00:00"), end: new Date("2024-07-14T22:30:00") },
+  { name: "Graz Philharmonic Night", country: Country.AUSTRIA, city: City.GRAZ, begin: new Date("2024-08-10T19:30:00"), end: new Date("2024-08-10T22:15:00") },
+  { name: "Linz Classic Rock", country: Country.AUSTRIA, city: City.LINZ, begin: new Date("2024-09-13T19:45:00"), end: new Date("2024-09-13T23:00:00") },
+  { name: "Innsbruck Winter Beats", country: Country.AUSTRIA, city: City.INNSBRUCK, begin: new Date("2024-11-23T20:00:00"), end: new Date("2024-11-23T22:30:00") },
+  { name: "Vienna Pop Night", country: Country.AUSTRIA, city: City.VIENNA, begin: new Date("2025-01-17T18:45:00"), end: new Date("2025-01-17T22:00:00") },
+  { name: "Graz Groove Evening", country: Country.AUSTRIA, city: City.GRAZ, begin: new Date("2025-02-28T20:15:00"), end: new Date("2025-02-28T23:00:00") },
+  { name: "Linz Jazz Brunch", country: Country.AUSTRIA, city: City.LINZ, begin: new Date("2025-03-12T11:00:00"), end: new Date("2025-03-12T13:00:00") },
+  { name: "Innsbruck Soul Night", country: Country.AUSTRIA, city: City.INNSBRUCK, begin: new Date("2025-04-27T19:00:00"), end: new Date("2025-04-27T21:45:00") },
+  { name: "Vienna Spring Fest", country: Country.AUSTRIA, city: City.VIENNA, begin: new Date("2025-05-23T18:00:00"), end: new Date("2025-05-23T21:00:00") },
+  { name: "Graz Metal Storm", country: Country.AUSTRIA, city: City.GRAZ, begin: new Date("2025-07-07T21:00:00"), end: new Date("2025-07-07T23:59:00") },
+  { name: "Linz Funky Friday", country: Country.AUSTRIA, city: City.LINZ, begin: new Date("2025-08-16T20:00:00"), end: new Date("2025-08-16T23:00:00") },
+  { name: "Innsbruck Chillout", country: Country.AUSTRIA, city: City.INNSBRUCK, begin: new Date("2025-09-11T19:15:00"), end: new Date("2025-09-11T22:15:00") },
+  { name: "Vienna Blues Hour", country: Country.AUSTRIA, city: City.VIENNA, begin: new Date("2025-10-29T19:30:00"), end: new Date("2025-10-29T22:00:00") },
+  { name: "Graz Future Sound", country: Country.AUSTRIA, city: City.GRAZ, begin: new Date("2025-12-04T20:00:00"), end: new Date("2025-12-04T23:00:00") },
+  { name: "Linz Festive Harmonies", country: Country.AUSTRIA, city: City.LINZ, begin: new Date("2026-01-22T18:00:00"), end: new Date("2026-01-22T21:00:00") },
+  { name: "Innsbruck Springtime Jam", country: Country.AUSTRIA, city: City.INNSBRUCK, begin: new Date("2026-02-19T20:30:00"), end: new Date("2026-02-19T23:00:00") },
+
+  // Germany
+  { name: "Munich Rock Circus", country: Country.GERMANY, city: City.MUNICH, begin: new Date("2024-03-20T19:00:00"), end: new Date("2024-03-20T22:30:00") },
+  { name: "Berlin House Night", country: Country.GERMANY, city: City.BERLIN, begin: new Date("2024-04-27T20:30:00"), end: new Date("2024-04-27T23:30:00") },
+  { name: "Cologne Summer Beats", country: Country.GERMANY, city: City.COLOGNE, begin: new Date("2024-05-31T21:00:00"), end: new Date("2024-05-31T23:30:00") },
+  { name: "Stuttgart Indie Pop", country: Country.GERMANY, city: City.STUTTGART, begin: new Date("2024-06-17T19:30:00"), end: new Date("2024-06-17T22:00:00") },
+  { name: "Munich Blues Sessions", country: Country.GERMANY, city: City.MUNICH, begin: new Date("2024-07-25T18:30:00"), end: new Date("2024-07-25T21:45:00") },
+  { name: "Berlin Electronic Vibes", country: Country.GERMANY, city: City.BERLIN, begin: new Date("2024-08-13T20:00:00"), end: new Date("2024-08-13T22:00:00") },
+  { name: "Cologne Classic Night", country: Country.GERMANY, city: City.COLOGNE, begin: new Date("2024-09-21T19:00:00"), end: new Date("2024-09-21T22:00:00") },
+  { name: "Stuttgart Metal Mayhem", country: Country.GERMANY, city: City.STUTTGART, begin: new Date("2024-11-03T19:30:00"), end: new Date("2024-11-03T23:00:00") },
+  { name: "Munich Winter Jam", country: Country.GERMANY, city: City.MUNICH, begin: new Date("2025-01-19T20:00:00"), end: new Date("2025-01-19T23:00:00") },
+  { name: "Berlin Groove Gathering", country: Country.GERMANY, city: City.BERLIN, begin: new Date("2025-02-15T21:00:00"), end: new Date("2025-02-15T23:00:00") },
+  { name: "Cologne Jazz Morning", country: Country.GERMANY, city: City.COLOGNE, begin: new Date("2025-03-09T11:30:00"), end: new Date("2025-03-09T13:45:00") },
+  { name: "Stuttgart Chill Session", country: Country.GERMANY, city: City.STUTTGART, begin: new Date("2025-04-30T19:45:00"), end: new Date("2025-04-30T22:00:00") },
+  { name: "Munich Spring Sounds", country: Country.GERMANY, city: City.MUNICH, begin: new Date("2025-05-25T19:00:00"), end: new Date("2025-05-25T22:00:00") },
+  { name: "Berlin Pop Parade", country: Country.GERMANY, city: City.BERLIN, begin: new Date("2025-07-13T20:00:00"), end: new Date("2025-07-13T22:30:00") },
+  { name: "Cologne Funk Night", country: Country.GERMANY, city: City.COLOGNE, begin: new Date("2025-08-09T19:15:00"), end: new Date("2025-08-09T23:00:00") },
+  { name: "Stuttgart Indie Dreams", country: Country.GERMANY, city: City.STUTTGART, begin: new Date("2025-09-04T20:00:00"), end: new Date("2025-09-04T23:30:00") },
+  { name: "Munich Future Fest", country: Country.GERMANY, city: City.MUNICH, begin: new Date("2025-10-10T21:00:00"), end: new Date("2025-10-10T23:59:00") },
+  { name: "Berlin Classic Vibes", country: Country.GERMANY, city: City.BERLIN, begin: new Date("2025-12-01T19:30:00"), end: new Date("2025-12-01T22:30:00") },
+  { name: "Cologne Festive Beats", country: Country.GERMANY, city: City.COLOGNE, begin: new Date("2026-01-10T19:00:00"), end: new Date("2026-01-10T22:00:00") },
+  { name: "Stuttgart New Year Bash", country: Country.GERMANY, city: City.STUTTGART, begin: new Date("2026-02-18T20:30:00"), end: new Date("2026-02-18T23:00:00") },
+
+  // USA
+  { name: "New York Summer Jam", country: Country.USA, city: City.NEW_YORK, begin: new Date("2024-04-05T19:00:00"), end: new Date("2024-04-05T23:00:00") },
+  { name: "Los Angeles Groove Fest", country: Country.USA, city: City.LOS_ANGELES, begin: new Date("2024-05-08T21:00:00"), end: new Date("2024-05-08T23:45:00") },
+  { name: "Miami Beach Beats", country: Country.USA, city: City.MIAMI, begin: new Date("2024-06-16T19:30:00"), end: new Date("2024-06-16T22:15:00") },
+  { name: "Dallas Indie Night", country: Country.USA, city: City.DALLAS, begin: new Date("2024-07-12T20:00:00"), end: new Date("2024-07-12T22:00:00") },
+  { name: "New York Jazz Night", country: Country.USA, city: City.NEW_YORK, begin: new Date("2024-08-18T18:30:00"), end: new Date("2024-08-18T21:45:00") },
+  { name: "Los Angeles Funk Fest", country: Country.USA, city: City.LOS_ANGELES, begin: new Date("2024-09-27T20:00:00"), end: new Date("2024-09-27T23:00:00") },
+  { name: "Miami House Party", country: Country.USA, city: City.MIAMI, begin: new Date("2024-11-01T21:30:00"), end: new Date("2024-11-01T23:59:00") },
+  { name: "Dallas Country Classics", country: Country.USA, city: City.DALLAS, begin: new Date("2025-01-07T20:30:00"), end: new Date("2025-01-07T22:45:00") },
+  { name: "New York Pop Gala", country: Country.USA, city: City.NEW_YORK, begin: new Date("2025-02-25T19:45:00"), end: new Date("2025-02-25T22:45:00") },
+  { name: "Los Angeles Hip Hop Bash", country: Country.USA, city: City.LOS_ANGELES, begin: new Date("2025-03-13T20:00:00"), end: new Date("2025-03-13T22:30:00") },
+  { name: "Miami Winter Beats", country: Country.USA, city: City.MIAMI, begin: new Date("2025-04-21T18:30:00"), end: new Date("2025-04-21T21:45:00") },
+  { name: "Dallas Spring Rock", country: Country.USA, city: City.DALLAS, begin: new Date("2025-05-15T19:00:00"), end: new Date("2025-05-15T21:30:00") },
+  { name: "New York Blues Bash", country: Country.USA, city: City.NEW_YORK, begin: new Date("2025-06-09T20:00:00"), end: new Date("2025-06-09T23:00:00") },
+  { name: "Los Angeles Metal Night", country: Country.USA, city: City.LOS_ANGELES, begin: new Date("2025-07-23T19:15:00"), end: new Date("2025-07-23T22:15:00") },
+  { name: "Miami Summer Fest", country: Country.USA, city: City.MIAMI, begin: new Date("2025-08-29T20:00:00"), end: new Date("2025-08-29T23:00:00") },
+  { name: "Dallas Groove Jam", country: Country.USA, city: City.DALLAS, begin: new Date("2025-10-05T21:00:00"), end: new Date("2025-10-05T23:00:00") },
+  { name: "New York Classic Sounds", country: Country.USA, city: City.NEW_YORK, begin: new Date("2025-11-14T19:30:00"), end: new Date("2025-11-14T22:30:00") },
+  { name: "Los Angeles Chillout Evening", country: Country.USA, city: City.LOS_ANGELES, begin: new Date("2025-12-22T20:00:00"), end: new Date("2025-12-22T23:00:00") },
+  { name: "Miami Festive Groove", country: Country.USA, city: City.MIAMI, begin: new Date("2026-01-28T21:00:00"), end: new Date("2026-01-28T23:59:00") },
+  { name: "Dallas Blues Night", country: Country.USA, city: City.DALLAS, begin: new Date("2026-02-09T20:30:00"), end: new Date("2026-02-09T23:00:00") },
+
+  // ... (continue pattern for the remaining concerts as above, using begin/end with time on the same day)
+];
+

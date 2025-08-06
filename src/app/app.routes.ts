@@ -1,0 +1,59 @@
+import {Route, Routes} from '@angular/router';
+import {beginParamCanActivateFn} from './routes/home/guards/canActivate/begin-param-can-activate';
+import {endParamCanActivateFn} from './routes/home/guards/canActivate/end-param-can-activate';
+import {beginBeforeEndCanActivateFn} from './routes/home/guards/canActivate/begin-before-end-can-activate';
+import {concertsResolver} from './routes/home/resolvers/concerts';
+import {cityOptionsResolver} from './routes/home/resolvers/city-options';
+import {queryParamGuardFactory, queryParamSerialGuardFactory} from './shared/utils/query-param-guard';
+import {beginQueryParamGuardFn} from './routes/home/guards/queryParam/begin-query-param';
+import {endQueryParamGuardFn} from './routes/home/guards/queryParam/end-query-param';
+import {beginBeforeEndQueryParamGuardFn} from './routes/home/guards/queryParam/begin-before-end-query-param';
+
+const concertsNearbyRouteBase: Partial<Route> = {
+  pathMatch: 'full',
+  runGuardsAndResolvers: 'paramsOrQueryParamsChange',
+  loadComponent: () => import('./routes/concerts-nearby/concerts-nearby-page').then(m => m.ConcertsNearbyPage),
+  resolve: {
+    concerts: concertsResolver,
+    cityOptions: cityOptionsResolver
+  }
+}
+
+
+export const routes: Routes = [
+    {
+      path: '',
+      pathMatch: 'full',
+      loadComponent: () => import('./routes/home/home-page').then(m => m.HomePage)
+    },
+    {
+      ...concertsNearbyRouteBase,
+      path: 'no-guards/concerts-nearby',
+      canActivate: []
+    },
+    {
+      ...concertsNearbyRouteBase,
+      path: 'can-activate/concerts-nearby',
+      canActivate: [
+        beginParamCanActivateFn,
+        endParamCanActivateFn,
+        beginBeforeEndCanActivateFn,
+        // ´cityParamCanActivateFn
+      ]
+    },
+    {
+      ...concertsNearbyRouteBase,
+      path: 'query-param/concerts-nearby',
+      canActivate: [
+        queryParamGuardFactory([
+
+          queryParamSerialGuardFactory(
+            beginQueryParamGuardFn,
+            endQueryParamGuardFn,
+            beginBeforeEndQueryParamGuardFn
+          )
+        ])
+      ]
+    }
+  ]
+;

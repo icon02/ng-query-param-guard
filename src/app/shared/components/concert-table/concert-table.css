@@ -1,0 +1,22 @@
+input, select {
+  margin: 0;
+}
+
+.name-col {
+  width: 35%;
+}
+
+.country-col {
+  width: 30%;
+}
+
+.city-col {
+  width: 30%;
+}
+
+th > input,
+th > select,
+td > input,
+td > select {
+  width: 100%;
+}

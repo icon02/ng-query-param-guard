@@ -1,0 +1,6 @@
+<h2>Concerts nearby</h2>
+<app-concert-table
+  [concerts]="$concerts()"
+  [cityOptions]="$cityOptions()"
+  [filter]="$concertTableFilter()"
+  (filterChanged)="updateFilter($event)" />

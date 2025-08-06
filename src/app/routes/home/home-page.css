@@ -1,0 +1,38 @@
+p {
+  margin-bottom: 8px;
+}
+
+h4 {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  max-width: 100%;
+}
+
+label > input {
+  width: 800px;
+  max-width: 100%;
+}
+
+ul.city-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  gap: 2px;
+}
+
+ul.city-list > li {
+  list-style: none;
+}
+ul.city-list > li:not(:last-child):after {
+  content: ", "
+}

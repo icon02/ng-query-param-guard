@@ -1,0 +1,17 @@
+<header>
+  <a routerLink="/" class="home-link">
+    <h1>QueryParamGuard Demo</h1>
+  </a>
+
+  <div>
+    <b>{{ $user()?.name }}</b>
+    <br>
+    <small>{{ $user()?.location }}</small>
+    |
+    <small>{{ $user()?.role }}</small>
+  </div>
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>

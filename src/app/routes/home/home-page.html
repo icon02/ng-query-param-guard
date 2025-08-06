@@ -1,0 +1,122 @@
+<h2>Home</h2>
+<p>
+  This is the demo application to showcase queryParam handling in Angular.
+</p>
+<p>
+  This will also show why we cannot just use a <i>canActivate</i>-guard for each queryParam.
+  Obviously, we could use one canActivate to handle all params at with one <i>canActivate</i>-guard,
+  but with an increasing number of queryParams that guard will get increasingly complex and
+  decreasingly maintainable.
+</p>
+<p>
+  The goal of this app is to showcase the <i>QueryParamGuard</i>
+  which, in fact, is a <i>canActivate</i>-guard again, but will be put together via multiple
+  <i>queryParamGuardFn</i>s.
+</p>
+
+<h3>Playground</h3>
+<p>
+  In this section we provide an example of the difference between using a <i>canActivate</i>-guard
+  per param or the newly introduced <i>QueryParamGuard</i>.
+</p>
+<p>Some things to try:</p>
+<ul>
+  <li>Enter a non valid <i>datetime-local</i> format</li>
+  <li>Let end be before begin</li>
+  <li>
+    Enter a City that is not one of the following
+    <ul class="city-list">
+      @for (city of getEnumValues(City); track city) {
+        <li>{{ city }}</li>
+      }
+    </ul>
+  </li>
+</ul>
+<p>
+  It is recommended to open the console.
+</p>
+
+
+<!--
+================================================================================
+no Guards
+================================================================================
+-->
+<ng-template
+  [ngTemplateOutlet]="playgroundItem"
+  [ngTemplateOutletContext]="{ $implicit: {
+  heading: 'No Guards',
+  routerLink: '/no-guards/concerts-nearby',
+  imgSrc: 'https://media.tenor.com/hP-0PYYDrTEAAAAM/tom-delonge-blink182.gif'
+  }}"/>
+
+<!--
+================================================================================
+CanActivate Guards
+================================================================================
+-->
+<ng-template
+  [ngTemplateOutlet]="playgroundItem"
+  [ngTemplateOutletContext]="{ $implicit: {
+  heading: 'CanActivate Guards',
+  routerLink: '/can-activate/concerts-nearby',
+  imgSrc: 'https://www.animierte-gifs.net/data/media/198/animiertes-frosch-bild-0015.gif',
+  content: canActivateContent}}">
+</ng-template>
+<ng-template #canActivateContent>
+  <p>
+    You can try to simulate async backend operations by delaying the result of the canActivate functions.
+    You will encounter errors if the e.g. the <i>endParamCanActivateFn</i> completes later than the
+    <i>beginBeforeEndCanActivateFn</i>.
+  </p>
+</ng-template>
+
+<!--
+================================================================================
+QueryParam Guards
+================================================================================
+-->
+<ng-template
+  [ngTemplateOutlet]="playgroundItem"
+  [ngTemplateOutletContext]="{ $implicit: {
+  heading: 'QueryParam Guards',
+  routerLink: '/query-param/concerts-nearby',
+  imgSrc: 'https://media.tenor.com/uCRaGUPr76cAAAAM/pacha-okay.gif',
+   }}">
+</ng-template>
+
+
+<!--
+================================================================================
+template
+================================================================================
+-->
+<ng-template #playgroundItem let-config>
+  <h4>
+    {{ config.heading }}
+    @if (config.imgSrc) {
+      <img [src]="config.imgSrc" height="48" alt="">
+    }
+  </h4>
+
+
+  @if (config.content) {
+    <ng-container [ngTemplateOutlet]="config.content"/>
+  }
+
+  <label>
+  <span>
+    <a
+      [routerLink]="config.routerLink"
+      [queryParams]="parseJson(textarea.value)">Link</a>
+  </span>
+    <textarea
+      [style.width]="'500px'"
+      [style.height]="'160px'"
+      (change)="scheduleCheck()"
+      rows="6"
+      value="{{ '{\n  \"begin\": \"2024-07-19T20:00\",\n \"end\": \"2026-10-10T23:59\",\n \"city\": \"Berlin\"\n}' }}"
+      #textarea></textarea>
+  </label>
+</ng-template>
+
