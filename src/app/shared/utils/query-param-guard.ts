@@ -109,7 +109,6 @@ export function queryParamParallelGuardFactory<T>(...queryParamGuardFns: QueryPa
         return queryParams;
       }
     }));
-
   };
 }
 
