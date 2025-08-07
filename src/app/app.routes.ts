@@ -8,6 +8,7 @@ import {queryParamGuardFactory, queryParamSerialGuardFactory} from './shared/uti
 import {beginQueryParamGuardFn} from './routes/concerts-nearby/guards/queryParam/begin-query-param';
 import {endQueryParamGuardFn} from './routes/concerts-nearby/guards/queryParam/end-query-param';
 import {beginBeforeEndQueryParamGuardFn} from './routes/concerts-nearby/guards/queryParam/begin-before-end-query-param';
+import {cityParamCanActivateFn} from "./routes/concerts-nearby/guards/canActivate/city-param-can-activate";
 
 const concertsNearbyRouteBase: Partial<Route> = {
   pathMatch: 'full',
@@ -38,7 +39,7 @@ export const routes: Routes = [
         beginParamCanActivateFn,
         endParamCanActivateFn,
         beginBeforeEndCanActivateFn,
-        // ´cityParamCanActivateFn
+        cityParamCanActivateFn
       ]
     },
     {
