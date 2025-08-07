@@ -47,7 +47,6 @@ export const routes: Routes = [
       path: 'query-param/concerts-nearby',
       canActivate: [
         queryParamGuardFactory([
-
           queryParamSerialGuardFactory(
             beginQueryParamGuardFn,
             endQueryParamGuardFn,
