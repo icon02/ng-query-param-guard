@@ -9,6 +9,7 @@ import {beginQueryParamGuardFn} from './routes/concerts-nearby/guards/queryParam
 import {endQueryParamGuardFn} from './routes/concerts-nearby/guards/queryParam/end-query-param';
 import {beginBeforeEndQueryParamGuardFn} from './routes/concerts-nearby/guards/queryParam/begin-before-end-query-param';
 import {cityParamCanActivateFn} from "./routes/concerts-nearby/guards/canActivate/city-param-can-activate";
+import {cityQueryParamGuardFn} from "./routes/concerts-nearby/guards/queryParam/city-query-param";
 
 const concertsNearbyRouteBase: Partial<Route> = {
   pathMatch: 'full',
@@ -47,6 +48,7 @@ export const routes: Routes = [
       path: 'query-param/concerts-nearby',
       canActivate: [
         queryParamGuardFactory([
+          cityQueryParamGuardFn,
           queryParamSerialGuardFactory(
             beginQueryParamGuardFn,
             endQueryParamGuardFn,
